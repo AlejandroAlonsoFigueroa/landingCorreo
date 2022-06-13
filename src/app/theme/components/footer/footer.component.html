@@ -1,0 +1,50 @@
+<div class="footer-container">
+
+
+    <div class = "semicircle">
+
+    </div>
+    
+    <div class = "inner-footer">
+        <div class = "boxes-container">
+
+            <div>
+                <p class = "page" (click) = "navigate('whoWeAre')">{{pages[0].name}}</p>
+                <p class = "page" (click) = "navigate('experience')">{{pages[1].name}}</p>
+                <!--<p class = "page">{{pages[2].name}}</p>-->
+
+            </div>
+            
+            <div>
+                <p class = "page">{{pages[3].name}}</p>
+                <div *ngFor = "let element of pages[3].children">
+                    <p class = "sub-page">{{element}}</p>
+                </div>    
+            </div>
+                
+
+            
+            
+            <div>
+                <p class = "page">{{pages[4].name}}</p>
+                
+
+            </div>
+            
+            <div>
+                <p class = "social-media" ><a class = "yellow-text" href = "https://facebook.com">{{socialMedia[0].name}}</a></p>
+                <p class = "social-media" ><a class = "yellow-text" href = "https://facebook.com">{{socialMedia[1].name}}</a> </p>
+                <p class = "social-media"><a   class = "yellow-text"href = "https://facebook.com">{{socialMedia[2].name}}</a></p>
+
+            </div>
+
+        </div>
+
+        <div class = "reserved-rights">
+            <p>© 2020 GRUPO TECNOLÓGICO BWL S. DE R.L DE C.V - TODOS LOS DERECHOS RESERVADOS</p>
+
+        </div>
+
+    </div>
+    
+</div>
