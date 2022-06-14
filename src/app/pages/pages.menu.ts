@@ -17,23 +17,23 @@ export let PAGES = [
         children: []
           
     },
-    {
+    /*{
         id: 3,
         name: "Experiencia",
         icon: "e903",
         source: "/pages/home",
         scrollElement: "experience",
         children: []
-    },
+    },*/
     {
-      id: 4,
+      id: 3,
       name: "Únete",
       icon: "e903",
       source: "/pages/join-us",
       children: []
     },
     {
-      id: 5,
+      id: 4,
       name: "Contáctanos",
       icon: "e903",
       source: "/pages/home",

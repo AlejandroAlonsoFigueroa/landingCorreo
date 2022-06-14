@@ -7,31 +7,13 @@
             <div *ngIf="!showBurguerButton" class="name-page-section d-flex">
                 <ul class="d-flex align-items-center">
                   <ng-container *ngFor="let page of pages; last as isLast">
-                      <li [ngClass]="{'active' : page.active && !page.scrollElement}" (click) = "navigate(page, $event, null, null, page.scrollElement)" (mouseenter)="navigate(page, $event, false, true)" >
+                      <li [ngClass]="{'active' : page.active && !page.scrollElement}" (click) = "navigate(page, $event, null, null, page.scrollElement)" (mouseenter)="showOurServices(page.name)" (mouseleave)="hideServices()"> <!--navigate(page, $event, false, true)-->
                           <a>{{ page.name }}</a>
                           <i *ngIf="isLast" class="contact-icon bwl-i bwl-e900"></i>
                           <!-- Here goes your new container -->
-                           <div *ngIf="page.showMenu" class="submenu-main-wrapper animated-fast fadeInSmallDown" (mouseleave)="hideMenuAlt()">
-                                <div class="arrow-down"></div>
-                                <div class="d-flex submenu-container">
-                                    <div class="submenu-poster">
-                                        <div class="text fw-extra">Todos nuestros <br> servicios</div>
-                                        <div class="linear-background"></div>
-                                        <img src="./assets/img/menu.jpg"/>
-                                    </div>
-                                    <div class="submenu-children">
-                                        <div class="children-item" *ngFor="let subPage of page.children" (click)="navigate(subPage, $event, true)" >
-                                            <div class="children-content">
-                                                <i class="children-icon bwl-i bwl-e904"></i>
-                                                <div class="children-info">
-                                                    <div class="children-title fw-bold">{{ subPage.name }}</div>
-                                                    <div class="children-description fw-medium">{{ subPage.description }}</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                           </div>
+
+                          
+                           
                     </li>
                   </ng-container>  
                 </ul>
@@ -69,4 +51,33 @@
           </li>
       </ul>
     </div>
+
+
+
+    <div *ngIf="showServices" class="submenu-main-wrapper animated-fast fadeInSmallDown" >
+        <div class="arrow-down"></div>
+        <div class="d-flex submenu-container">
+            <div class="submenu-poster">
+                <div class="text fw-extra">Todos nuestros <br> servicios</div>
+                <div class="linear-background"></div>
+                <img src="./assets/img/menu.jpg"/>
+            </div>
+            <div class="submenu-children">
+                <div class="children-item" *ngFor="let subPage of ourServices" (click)="navigate(subPage, $event, true)" >
+                    <div class="children-content">
+                        <i class="children-icon bwl-i bwl-e904"></i>
+                        <div class="children-info">
+                            <div class="children-title fw-bold">{{ subPage.name }}</div>
+                            <div class="children-description fw-medium">{{ subPage.description }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+
+    
+  
   </nav>
+
+  

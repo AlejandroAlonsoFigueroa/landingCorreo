@@ -37,15 +37,79 @@ export class HeaderComponent {
   showMobileMenu    : boolean = false;
 
   sideMenuSelectedItem: string = "quienesSomos"
+
+
+  ourServices: any[];
+
+  showServices: boolean = false;
   
   @Output() scrollTop =  new EventEmitter<any>()
 
+  showOurServices(pageName: string): void{
+   
+    if(pageName == "Servicios"){
+      this.showServices = true;
+    }
+  }
+
+  hideServices(): void{
+    this.showServices = false;
+   
+  }
+
+  
   constructor(
     private router : Router,
     private myElement: ElementRef
   ) {
     this.pages = PAGES;
     this.initRouteInterceptor();
+
+    this.ourServices = [{
+            name: 'Equipos de Desarrollo',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do',
+            source: '/pages/services/development-team'
+          },
+          {
+            name: 'Productos de Software',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do',
+            source: '/pages/services/software-products'
+          },
+          {
+            name: 'Transformación Digital',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do',
+            source: '/pages/services/development-team'
+          },
+          {
+            name: 'Portales Web',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do',
+            source: '/pages/services/development-team'
+          },
+          {
+            name: 'Aplicaciones Móviles',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do',
+            source: '/pages/services/development-team'
+          },
+          {
+            name: 'Soluciones en la nube',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do',
+            source: '/pages/services/development-team'
+          },
+      
+         
+         
+          {
+            name: 'UI/UX Design',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do',
+            source: '/pages/services/development-team'
+          },
+         
+          {
+            name: 'Centro creativo',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do',
+            source: '/pages/services/development-team'
+          },
+        ]
   }
 
   ngOnInit(): void {
